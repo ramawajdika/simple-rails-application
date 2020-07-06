@@ -10,6 +10,10 @@ gem 'rails', '~> 5.2.1'
 gem 'mysql2'
 # Use devise 
 gem 'devise'
+# use roo
+gem 'roo'
+gem 'iconv'
+gem 'csv'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

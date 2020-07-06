@@ -20,4 +20,10 @@
       <% end %>
     </tr>
   <% end %>
+  <h2>Import Article</h2>
+
+<%= form_tag import_articles_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </table>

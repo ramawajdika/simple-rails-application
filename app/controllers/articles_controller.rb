@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-
     @articles = Article.all
   end
   def show
@@ -34,6 +33,10 @@ def destroy
   @article = Article.find(params[:id])
   @article.destroy
   redirect_to articles_path
+end
+def import
+  Article.import(params[:file])
+  redirect_to root_url, notice: "Article imported."
 end
   private
     def article_params
