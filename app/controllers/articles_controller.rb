@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   end
   def create
     @article = current_user.articles.create(article_params)
+    byebug
     if @article.save
       redirect_to @article
     else
@@ -35,7 +36,7 @@ def destroy
   redirect_to articles_path
 end
 def import
-  Article.import(params[:file])
+  Article.import(params[:file], current_user.id)
   redirect_to root_url, notice: "Article imported."
 end
   private
